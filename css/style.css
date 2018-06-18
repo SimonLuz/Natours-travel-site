@@ -42,9 +42,6 @@ body {
     transform: translateY(0); } }
 
 /* PROJECT-WIDE FONT DEFINITIONS: Font styles ALWAYS in the <body> selector - because the properties of fonts are INHERITED (???), will be explained later */
-html {
-  font-size: 62.5%; }
-
 body {
   font-family: "Lato", sans-serif;
   font-weight: 400;
@@ -95,7 +92,7 @@ body {
     border-radius: 5rem;
     transition: all .2s;
     position: relative;
-    font-size: 1.6rem; }
+    font-size: 1  .6rem; }
   .btn:hover {
     transform: translateY(-3px);
     box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.3); }

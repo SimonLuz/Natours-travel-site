@@ -1,8 +1,5 @@
 /* PROJECT-WIDE FONT DEFINITIONS: Font styles ALWAYS in the <body> selector - because the properties of fonts are INHERITED (???), will be explained later */
 
-html {
-	font-size: 62.5%;
-}
 
 body {
 	font-family: "Lato", sans-serif;
@@ -12,6 +9,7 @@ body {
 	color: $color-gray-dark;
 	padding: 1rem;
 }
+
 
 // START Header heading and sub-heading //
 

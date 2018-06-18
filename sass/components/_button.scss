@@ -1,0 +1,66 @@
+.btn {
+    
+    &:link,
+    &:visited {
+        display: inline-block;
+        margin: 0 auto;
+        text-transform: uppercase;
+        text-decoration: none;
+        padding: .8rem 2.3rem;
+        border-radius: 5rem;
+        transition: all .2s;
+        position: relative;
+        font-size: 1.6rem;
+    }
+    /* :link is a pseudo-class (pseudo-classes are special states, or special condition of the selector!!!!)
+    - we want the :visited state to look like :link state
+    */
+
+    &:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 1rem 2rem rgba(0, 0, 0, .3);
+        
+        &::after {
+        transform: scaleX(1.4) scaleY(1.8);
+        opacity: 0;
+        }
+    }
+
+    /* :active - a state when element is clicked on 
+        values in translateY(...) are ALWAYS IN RELATION TO THE INITAL STATE, not hover state!!!!*/
+    &:active {
+        transform: translateY(-1px);
+        box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .3);
+    }
+
+    &--white {
+        background-color: $color-white;
+        color: $color-gray-dark;
+        
+         &::after {
+        background-color: $color-white;
+        }
+    }
+
+    /* :after pseudo-element can be used to insert extra content after the element */
+    &::after {
+        content: "";
+        display: inline-block;
+    /* content & display properties must be declared; we want the element to be "behind" the button here 
+    - essentially ::after element is like a child element*/
+        height: 100%;
+        width: 100%;
+        border-radius: 10rem;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -1;
+        transition: all .4s; /*:after is the INITIAL STATE for scale() */
+    }
+
+    &--animated {
+        animation: moveFromBottom .5s ease-out .75s;
+        animation-fill-mode: backwards; 
+    }
+}
+

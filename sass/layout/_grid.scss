@@ -1,7 +1,6 @@
 .row {
     max-width: $grid-width; 
 // 1140px is a standard grid / max-width enables more flexibility than widht
-    background-color: #eee;
     margin: 0 auto;
     
     &:not(:last-child) {
@@ -13,7 +12,6 @@
 
 // USE Attribute selector [] instead of giving another class to each <div> "col" element for common declarations
         div[class^="col"] {
-            background-color: orangered;
             float: left;
         
             &:not(:last-child) {

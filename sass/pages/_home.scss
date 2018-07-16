@@ -34,3 +34,21 @@
     padding: 15rem 0;
     position: relative;
 }
+
+.section-book {
+    padding: 15rem 0;
+    background-image: linear-gradient(
+        to right bottom,
+        $color-primary-light,
+        $color-primary-dark);
+}
+
+.book {
+    background-image: linear-gradient(rgba($color-white, .9), red), url(../img/nat-10.jpg);
+    background-size: cover;
+    border-radius: 3px;
+    box-shadow: 0 2rem 4rem rgba($color-black, .3);
+    
+    height: 50rem; // Later the content will define the height
+}
+

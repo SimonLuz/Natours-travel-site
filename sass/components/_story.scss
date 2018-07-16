@@ -1,0 +1,62 @@
+.story {
+    width: 75%;
+    margin: 0 auto;
+    box-shadow: 0 3rem 6rem rgba($color-black, .1);
+    background-color: $color-white;
+    border-radius: 3px;
+    padding: 6rem;
+    padding-left: 9rem; //to compensate transform:-3rem of the circle moved away from the text 
+    font-size: $default-font-size;
+    transform: skewX(-12deg);
+    
+    &__text {
+        transform: skewX(12deg);
+    }
+    
+    &__shape {
+        width: 15rem;
+        height: 15rem;
+        float: left;
+        -webkit-shape-outside: circle(50% at 50% 50%);
+        shape-outside: circle(50% at 50% 50%); 
+//shape-outside defines how the content flows around the element; it must have float, height and width to work!!!
+        
+        -webkit-clip-path: circle(50% at 50% 50%);
+        clip-path: circle(50% at 50% 50%);
+// to add space btween floated element and text don't use MARGINS/PADDING, use transform;
+        transform: translateX(-3rem) skewX(12deg);
+        position: relative;
+    }
+    
+    &__img {
+        height: 100%; //img is wider than higher, so must define height not width
+        transform: translateX(-4rem) scale(1.4); // centers the img in the circle
+        transition: all .5s;
+    }
+    
+    &__caption {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, 20%);
+        color: $color-white;
+        font-size: 1.8rem;
+        text-align: center;
+        text-transform: uppercase;
+        opacity: 0;
+        transition: all .5s;
+        backface-visibility: hidden; // to fix the shaking glitch of the animation
+    }
+    
+// &:hover &__caption means: as soon as we hover "story", we want to chang the __caption
+    &:hover &__caption {
+        opacity: 1;
+        transform: translate(-50%, -50%);
+    }
+    
+    &:hover &__img {
+        transform: scale(1) translateX(-4rem);
+        filter: blur(3px) brightness(80%);
+    }
+}
+

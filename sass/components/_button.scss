@@ -1,5 +1,5 @@
 .btn {
-    
+    &,
     &:link,
     &:visited {
         display: inline-block;
@@ -11,6 +11,8 @@
         transition: all .2s;
         position: relative;
         font-size: $default-font-size;
+        
+        
     }
     /* :link is a pseudo-class (pseudo-classes are special states, or special condition of the selector!!!!)
     - we want the :visited state to look like :link state

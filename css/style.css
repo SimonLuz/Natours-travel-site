@@ -127,7 +127,7 @@ body {
   /* :active - a state when element is clicked on 
         values in translateY(...) are ALWAYS IN RELATION TO THE INITAL STATE, not hover state!!!!*/
   /* :after pseudo-element can be used to insert extra content after the element */ }
-  .btn:link, .btn:visited {
+  .btn, .btn:link, .btn:visited {
     display: inline-block;
     margin: 0 auto;
     text-transform: uppercase;
@@ -403,7 +403,8 @@ body {
   border: none;
   border-bottom: 3px solid transparent;
   width: 90%;
-  display: block; }
+  display: block;
+  transition: all .3s; }
   .form__input:focus {
     outline: none;
     box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2);
@@ -414,15 +415,56 @@ body {
     color: #999; }
 
 .form__label {
-  font-size: 1.2rem;
+  font-size: 1.3rem;
   font-weight: 700;
   margin-left: 2rem;
   margin-top: .7rem;
   display: block;
   transition: all .3s; }
 
-.form__input:placeholder-shown + $__label {
+.form__input:placeholder-shown + .form__label {
+  opacity: 0;
+  visibility: hidden;
   transform: translateY(-4rem); }
+
+.form__radio-group {
+  width: 49%;
+  display: inline-block; }
+
+.form__radio-input {
+  display: none; }
+
+.form__radio-label {
+  font-size: 1.6rem;
+  cursor: pointer;
+  position: relative;
+  padding-left: 4rem; }
+
+.form__radio-button {
+  height: 3rem;
+  width: 3rem;
+  border: 5px solid #55c57a;
+  border-radius: 50%;
+  display: inline-block;
+  position: absolute;
+  left: 0;
+  top: -.5rem; }
+  .form__radio-button::after {
+    content: "";
+    display: block;
+    height: 1.5rem;
+    width: 1.5rem;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #55c57a;
+    opacity: 0;
+    transition: opacity .2s; }
+
+.form__radio-input:checked ~ .form__radio-label .form__radio-button::after {
+  opacity: 1; }
 
 .section-about {
   background-color: #f7f7f7;

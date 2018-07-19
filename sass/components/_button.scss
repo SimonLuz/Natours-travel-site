@@ -11,7 +11,7 @@
         transition: all .2s;
         position: relative;
         font-size: $default-font-size;
-        
+        border: none;
         
     }
     /* :link is a pseudo-class (pseudo-classes are special states, or special condition of the selector!!!!)
@@ -30,10 +30,13 @@
 
     /* :active - a state when element is clicked on 
         values in translateY(...) are ALWAYS IN RELATION TO THE INITAL STATE, not hover state!!!!*/
-    &:active {
+    &:active,
+    &:focus {
+        outline: none;
         transform: translateY(-1px);
         box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .3);
     }
+    
 
     &--white {
         background-color: $color-white;

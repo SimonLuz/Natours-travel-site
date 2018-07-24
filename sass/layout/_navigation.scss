@@ -17,6 +17,7 @@
         box-shadow: 0 1rem 2rem rgba(0, 0, 0, .3);
         
         text-align: center; //to center lines of the burger nav
+        cursor: pointer;
     }
     
     &__background {
@@ -101,6 +102,11 @@
     // ICON
     
     &__icon {
+        
+        position: relative;
+        margin-top: 3.4rem;
+        
+        
         &,
         &::before,
         &::after {
@@ -115,10 +121,20 @@
             content: ""; // all pseudo-elements :: need content empty to appear
             position: absolute;
             left: 0;
+            transition: all .2s;
         }
         
-        &::before { top: -1rem; }
-        &::after { top: 1rem; }
+        &::before { top: .8rem; }
+        &::after { top: -.8rem; }
         
+    }
+    
+    //icon is child element of the button so we can do this in this way
+    &__button:hover &__icon::before {
+        top: 1rem;
+    }
+        
+    &__button:hover &__icon::after {
+        top:-1rem;
     }
 }

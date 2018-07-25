@@ -124,17 +124,33 @@
             transition: all .2s;
         }
         
-        &::before { top: .8rem; }
-        &::after { top: -.8rem; }
+        &::before { top: -.9rem; }
+        &::after { top: .9rem; }
         
     }
     
     //icon is child element of the button so we can do this in this way
     &__button:hover &__icon::before {
-        top: 1rem;
+        top: - 1.1rem;
     }
         
     &__button:hover &__icon::after {
-        top:-1rem;
+        top: 1.1rem;
+    }
+
+// when checkbox is selected, select a brother element (+) and than select the button's child (icon)
+    &__checkbox:checked + &__button &__icon {
+        background-color: transparent;
+    }
+    
+    &__checkbox:checked + &__button &__icon::before {
+        transform: rotate(135deg) ;
+        top: 0;
+    }
+    
+    &__checkbox:checked + &__button &__icon::after {
+        transform: rotate(-135deg);
+        top: 0;
     }
 }
+

@@ -14,9 +14,51 @@
         
         background-color: $color-white;
         width: 75%;
-        height: 50%;
+        //height: 50%;
         box-shadow: 0 2rem 4rem rgba($color-black, .7);
         position: absolute;
         border-radius: 3px;
+        
+        display: table;
+        vertical-align: middle;
+        overflow: hidden;
     }
+    
+    
+    &__left {
+         width: 33.33333%;  
+//        float:left; we don't use floats, because the divs have different heights and its' harder to center vertically
+        display: table-cell;
+        vertical-align: middle;
+        
+    }
+    
+    &__right {
+        width: 66.66666%;
+//        float: left;
+        display: table-cell;
+        vertical-align: middle;
+        padding: 3rem 5rem;
+    }
+    
+    &__img {
+        display: block;
+        width: 100%;
+        
+    }
+    
+    &__text {
+        
+    }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
 }

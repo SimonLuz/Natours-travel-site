@@ -1,3 +1,23 @@
+/*
+0 - 600px:     Phone
+600 - 900px:   Tablet Portrait
+900 - 1200px:  Tablet Landscape
+1200px - 1800px:  Normal Styles apply with DESKTOP FIRST
+1800px +       Big Desktop
+
+
+
+@mixin respond-phone {
+    @media (max-width: 600px) { @content }; // a single-device mixin, includes @content "directive", which allows us to pass a content block into a mixin.
+}
+
+     "global" mixin for all devices:
+    $breakpoint argument choices:
+    - phone
+    - tab-port
+    - tab-land
+    - big-desktop
+    */
 /* VARIABLES */
 /* COLORS */
 /* Grid Variables */
@@ -10,7 +30,27 @@
   box-sizing: inherit; }
 
 html {
-  font-size: 62.5%; }
+  font-size: 62.5%;
+  /* 
+    Traditional media query:
+    @media (max-width: 600px) {
+        font-size: 50%;  
+    }
+    
+    Media Query for a single device, also not ideal
+    @include respond-phone {
+        font-size: 50%; // 
+    }
+*/ }
+  @media (max-width: 75em) {
+    html {
+      font-size: 56.25%; } }
+  @media (max-width: 56.25em) {
+    html {
+      font-size: 50%; } }
+  @media (min-width: 112.5em) {
+    html {
+      font-size: 80%; } }
 
 body {
   box-sizing: border-box; }

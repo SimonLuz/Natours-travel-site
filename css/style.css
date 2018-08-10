@@ -273,14 +273,34 @@ body {
     z-index: 5;
     transition: all .2s;
     outline-offset: 2rem; }
+    @media (max-width: 56.25em) {
+      .composition__photo {
+        position: relative;
+        float: left;
+        width: 33.3333%;
+        box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.4); } }
     .composition__photo--p1 {
       top: -2rem; }
+      @media (max-width: 56.25em) {
+        .composition__photo--p1 {
+          top: 0;
+          transform: scale(1.2); } }
     .composition__photo--p2 {
       right: 0;
-      top: 2rem; }
+      top: -1rem; }
+      @media (max-width: 56.25em) {
+        .composition__photo--p2 {
+          top: -2rem;
+          transform: scale(1.3);
+          z-index: 10; } }
     .composition__photo--p3 {
       left: 20%;
       top: 10rem; }
+      @media (max-width: 56.25em) {
+        .composition__photo--p3 {
+          left: 1rem;
+          top: 0;
+          transform: scale(1.1); } }
     .composition__photo:hover {
       transform: scale(1.05) translateY(-0.5rem);
       box-shadow: 0 2.5rem 4rem rgba(0, 0, 0, 0.3);
@@ -297,6 +317,9 @@ body {
   border-radius: 3px;
   box-shadow: 0 1.5rem 3rem rgba(0, 0, 0, 0.3);
   transition: transform .2s; }
+  @media (max-width: 56.25em) {
+    .feature-box {
+      padding: 2rem; } }
   .feature-box:hover {
     transform: translateY(-1.5rem) scale(1.05);
     box-shadow: 0 2.5rem 4rem rgba(0, 0, 0, 0.3); }
@@ -308,6 +331,9 @@ body {
     background-image: linear-gradient(to right, #7ed56f, #28b485);
     -webkit-background-clip: text;
     color: transparent; }
+    @media (max-width: 56.25em) {
+      .feature-box__icon {
+        margin-bottom: 0; } }
 
 .card {
   perspective: 150rem;
@@ -398,6 +424,31 @@ body {
   .card__price-value {
     font-size: 6rem;
     font-weight: 100; }
+  @media (max-width: 56.25em) {
+    .card {
+      height: auto; }
+      .card__side {
+        height: auto;
+        position: relative;
+        border-radius: 3px; }
+      .card:hover .card__side--front {
+        transform: rotateY(0); }
+      .card:hover .card__side--back {
+        transform: rotateY(0); }
+      .card__cta {
+        position: relative;
+        top: 0;
+        left: 0;
+        transform: translate(0);
+        width: 100%;
+        padding: 4rem; }
+      .card__price-box {
+        margin-bottom: 3rem; }
+      .card__price-only {
+        font-size: 1.4rem;
+        text-transform: uppercase; }
+      .card__price-value {
+        font-size: 6rem; } }
 
 .story {
   width: 75%;
@@ -618,7 +669,7 @@ body {
     transform: skewY(6deg); }
   @media (max-width: 56.25em) {
     .section-features {
-      padding: 20rem 0; } }
+      padding: 10rem 0; } }
 
 .section-tours {
   background-color: #f7f7f7;

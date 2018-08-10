@@ -6,7 +6,7 @@
 // perspective allways defined on a parent 
     -moz-perspective: 150rem;
     position: relative;
-    height: 52rem;
+    height: 52rem; // size defined to be the same for the front and back
     
     &__side {
         height: 52rem;
@@ -178,6 +178,53 @@
         font-weight: 100;
     }
 // END BACK SIDE STYLES
+    
+    
+    // MEDIA QUERY
+    
+    @include respond(tab-port) {
+            
+        height: auto; //we don't need it anymore
+
+        &__side {
+            height: auto;
+            position: relative;
+            border-radius: 3px;
+        }
+
+        &:hover &__side--front {
+            transform: rotateY(0);    
+        }
+
+        &:hover &__side--back {
+            transform: rotateY(0);    
+        }
+
+    // START FRONT SIDE STYLES
+        
+        // START BACK SIDE STYLES
+        &__cta {
+            position: relative;
+            top: 0;
+            left: 0;
+            transform: translate(-0);
+            width: 100%;
+            padding: 4rem;
+        }
+
+        &__price-box {
+            margin-bottom: 3rem;
+        }
+
+        &__price-only {
+            font-size: 1.4rem;
+            text-transform: uppercase;
+        }
+
+        &__price-value {
+            font-size: 6rem;
+        }
+    }
 }
 
 

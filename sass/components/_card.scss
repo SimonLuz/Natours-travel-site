@@ -7,6 +7,9 @@
     -moz-perspective: 150rem;
     position: relative;
     height: 52rem; // size defined to be the same for the front and back
+    border-radius: 3px;
+    box-shadow: 0 1.5rem 4rem rgba($color-black, .2);
+    overflow: hidden;
     
     &__side {
         height: 52rem;
@@ -17,8 +20,6 @@
         backface-visibility: hidden;
         overflow: hidden; //Images on the FRONT OF THE cards do not overflow the card and you can see card's rounded corners!!!
         width: 100%;
-        border-radius: 3px;
-        box-shadow: 0 1.5rem 4rem rgba($color-black, .2);
         
         
         &--front {
@@ -185,21 +186,33 @@
     @include respond(tab-port) {
             
         height: auto; //we don't need it anymore
+        border-radius: 3px;
+        box-shadow: 0 1.5rem 4rem rgba($color-black, .2);
+        background-color: #fff;
 
         &__side {
             height: auto;
             position: relative;
             border-radius: 3px;
+             
+            &--back {
+                transform: rotateY(0);
+                webkit-clip-path: polygon(0 15%, 100% 0, 100% 100%, 0 100%);
+                clip-path: polygon(0 15%, 100% 0, 100% 100%, 0 100%);
+                
+            
+            }
         }
 
         &:hover &__side--front {
             transform: rotateY(0);    
         }
-
-        &:hover &__side--back {
-            transform: rotateY(0);    
+        
+        &__details {
+            padding: 1rem 3rem;
         }
 
+        
     // START FRONT SIDE STYLES
         
         // START BACK SIDE STYLES
@@ -207,13 +220,14 @@
             position: relative;
             top: 0;
             left: 0;
-            transform: translate(-0);
+            transform: translate(0);
             width: 100%;
             padding: 4rem;
+            text-align: center;
         }
 
         &__price-box {
-            margin-bottom: 3rem;
+            margin-bottom: 1rem;
         }
 
         &__price-only {
@@ -222,7 +236,7 @@
         }
 
         &__price-value {
-            font-size: 6rem;
+            font-size: 5rem;
         }
     }
 }

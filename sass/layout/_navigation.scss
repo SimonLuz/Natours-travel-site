@@ -62,7 +62,9 @@
         list-style: none;
         text-align: center;
         
-        
+        @include respond(phone) {
+            width: 70%;
+        }
     }
     
     &__item {
@@ -88,6 +90,17 @@
             background-image: linear-gradient(120deg, transparent 0%, transparent 50%, $color-white 50%);
             background-size: 220%;
             transition: all .4s;
+            
+            @include respond(tab-port) {
+                font-size: 2.5rem;
+                padding: 1rem 6rem;
+            }
+            
+             @include respond(phone) {
+                font-size: 2rem;
+                padding: 1rem 1rem;
+                
+            }
         }
         
         &:hover,

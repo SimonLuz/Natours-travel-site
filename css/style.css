@@ -623,7 +623,13 @@ body {
   z-index: 100;
   opacity: 0;
   visibility: hidden;
-  transition: all .3s; }
+  transition: all .3s;
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px); }
+  @supports (-webkit-backdrop-filter: blur(10px)) or (backdrop-filter: blur(10px)) {
+    .popup {
+      -webkit-backdrop-filter: blur(10px);
+      backdrop-filter: blur(10px); } }
   .popup__content {
     top: 50%;
     left: 50%;
@@ -741,21 +747,21 @@ body {
         width: 100%; } }
 
 .header {
-  height: 95vh;
+  height: 85vh;
   background-image: linear-gradient(to right bottom, rgba(126, 213, 111, 0.75), rgba(40, 180, 133, 0.75)), url(../img/hero-small.jpg);
   /* Only SCSS file can take a variable in rgba */
   background-size: cover;
   background-position: top;
-  -webkit-clip-path: polygon(0% 0%, 100% 0%, 100% 80vh, 0% 100%);
-  clip-path: polygon(0% 0%, 100% 0%, 100% 80vh, 0% 100%);
   position: relative;
   /* ANIMATIONS CAN be applied to :hover */ }
-  @media (min-resolution: 192dpi) and (min-width: 600px) {
+  @supports (-webkit-clip-path: polygon(0% 0%, 100% 0%, 100% 80vh, 0% 100%)) or (clip-path: polygon(0% 0%, 100% 0%, 100% 80vh, 0% 100%)) {
     .header {
-      background-image: linear-gradient(to right bottom, rgba(255, 185, 0, 0.75), rgba(255, 119, 48, 0.75)), url(../img/hero.jpg); } }
-  @media (min-width: 2000px) {
+      -webkit-clip-path: polygon(0% 0%, 100% 0%, 100% 80vh, 0% 100%);
+      clip-path: polygon(0% 0%, 100% 0%, 100% 80vh, 0% 100%);
+      height: 95vh; } }
+  @media (min-resolution: 192dpi) and (min-width: 37.5em), (-webkit-min-device-pixel-ration: 2) and (min-width: 37.5em), (min-width: 125em) {
     .header {
-      background-image: linear-gradient(to right bottom, rgba(255, 185, 0, 0.75), rgba(255, 119, 48, 0.75)), url(../img/hero.jpg); } }
+      background-image: linear-gradient(to right bottom, rgba(126, 213, 111, 0.75), rgba(40, 180, 133, 0.75)), url(../img/hero.jpg); } }
   @media (max-width: 37.5em) {
     .header {
       -webkit-clip-path: polygon(0% 0%, 100% 0%, 100% 90vh, 0% 100%);

@@ -12,6 +12,15 @@
     opacity: 0;
     visibility: hidden;
     transition: all .3s;
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px); // NOT supported in Chrome
+    
+    // GRACEFUL DEGRADATION - FEATURE-Query: IF .... property is supported, than the code in {} is applied...
+    @supports (-webkit-backdrop-filter: blur(10px)) or (backdrop-filter: blur(10px)) {
+        -webkit-backdrop-filter: blur(10px);
+        backdrop-filter: blur(10px); // NOT supported in Chrome
+// background-color: rgba($color-gray, .8); // Blur looks better with light colors
+    }
     
     &__content {
         @include center;

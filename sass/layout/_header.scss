@@ -20,9 +20,9 @@
     
     
 // MEDIA QUERY for RESPONSIVE CSS Background Images:
-    @media (min-resolution: 192dpi) and (min-width: 37.5em),
-    (-webkit-min-device-pixel-ration: 2) and (min-width: 37.5em), // SAFARI needs webkit and different syntax
-    (min-width: 125em) { // IF THE res. is higher than 192dpi AND min-width of a display is 600px, or if it's more than 2000px...
+    @media only screen and (min-resolution: 192dpi) and (min-width: 37.5em),
+        only screen and (-webkit-min-device-pixel-ration: 2) and (min-width: 37.5em), // SAFARI needs webkit and different syntax
+        only screen and(min-width: 125em) { // IF THE res. is higher than 192dpi AND min-width of a display is 600px, or if it's more than 2000px...
         background-image: linear-gradient(
             to right bottom, 		
             rgba($color-primary-light, 0.75), 

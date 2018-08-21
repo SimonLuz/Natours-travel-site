@@ -49,3 +49,8 @@ body {
 }
 
 
+// FINAL CONSIDERATIONS: style changes of highlighted text
+::selection {
+    background-color: $color-primary;
+    color: $color-white;
+}

@@ -181,10 +181,13 @@
 // END BACK SIDE STYLES
     
     
-    // MEDIA QUERY
+// MEDIA QUERY
+    // @include respond(tab-port) { - CAN'T use the mixin media query, must use real media query
     
-    @include respond(tab-port) {
-            
+    @media only screen and (max-width: 56.25em),
+            only screen and (hover: none) { 
+// only screen and (hover: none) - these styles will apply also to devices that cannot hover, otherwise back of the card would't be visible on iPad Pro - big screen, but cannot hover;        
+    
         height: auto; //we don't need it anymore
         border-radius: 3px;
         box-shadow: 0 1.5rem 4rem rgba($color-black, .2);
